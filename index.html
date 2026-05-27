@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Navigation Drawer CPS</title>
 </head>
+
 <body>
     <aside class='drawer'>
         <header class='drawer-header'>
-            <div class="drawer-wrapper-left">
-                <button class="drawer-burger"><img src="./images/burger.svg" alt="drawer-burger-ic"></button>
-                <div class="drawer-group"><img src="./images/Group.svg" alt="drawer-group-ic"></div>
+            <div class="drawer-wrapper">
+                <div class="drawer-wrapper-left">
+                    <button class="drawer-burger"><img src="./images/burger.svg" alt="drawer-burger-ic"></button>
+                    <div class="drawer-group"><img src="./images/Group.svg" alt="drawer-group-ic"></div>
+                </div>
+                <div class="drawer-wrapper-right">
+                    <button class="drawer-search"><img src="./images/search.svg" alt="drawer-search-ic"></button>
+                </div>
             </div>
-            <div class="drawer-wrapper-right">
-                <button class="drawer-search"><img src="./images/search.svg" alt="drawer-search-ic"></button>
-            </div>
-        </header>
-        <main>
+            <!-- <main> -->
             <nav class='drawer-nav-wrapper'>
                 <ul class='drawer-nav-links'>
-                    <li class="drawer-link-1"><a href="#">Ремонт техники</a></li>
+                    <li class="drawer-link-1 is-active"><a href="#">Ремонт техники</a></li>
                     <li class="drawer-link-2"><a href="#">Услуги и сервисы</a></li>
                     <li class="drawer-link-3"><a href="#">Корпоративным клиентам</a></li>
                     <li class="drawer-link-4"><a href="#">Продавцам техники</a></li>
@@ -30,18 +33,27 @@
                     <li class="drawer-link-8"><a href="#">Наши сервисные центры</a></li>
                 </ul>
             </nav>
-        </main>
+            <!-- </main> -->
+        </header>
         <footer class='drawer-footer'>
-            <div class="drawer-footer-buttons"></div>
-            <address class="drawer-address"></address>
+            <div class="drawer-footer-buttons">
+                <button class="drawer-chat-copy"><img src="./images/chat copy.svg" alt="drawer-chat-copy-ic"></button>
+                <button class="drawer-chat"><img src="./images/chat.svg" alt="drawer-chat-ic"></button>
+                <button class="drawer-profile"><img src="./images/profile.svg" alt="drawer-profile-ic"></button>
+            </div>
+            <address class="drawer-address">
+                <a href="mailto:mail@cps.com" class="drawer-mail-link" title="Написать на почту">mail@cps.com</a>
+                <a href="tel:8 800 890 8900" class="drawer-call-link" title="Позвонить нам">8 800 890 8900</a>
+            </address>
             <nav class="drawer-lang-switcher" aria-label='Смена языка / Language selection'>
                 <ul class="drawer-lang-list">
-                    <li><a href="" hreflang='' aria-current='' title=''></a></li>
-                    <li><a href="" hreflang='' title=''></a></li>
-                    <li><a href="" hreflang='' title=''></a></li>
+                    <li><a href="/ru" hreflang='ru' aria-current='page' title='Текущий язык: Русский' class='is-active'>RU</a></li>
+                    <li><a href="/en" hreflang='en' title='Switch to English'>EN</a></li>
+                    <li><a href="/ch" hreflang='ch' title='Switch to Chinese'>CH</a></li>
                 </ul>
             </nav>
         </footer>
     </aside>
 </body>
+
 </html>

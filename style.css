@@ -36,20 +36,40 @@
 
 .drawer {
     display: flex;
+    position: fixed; /* Чтобы сделать скролл только боковой панели фиксируем её */
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* z-index: 9999; */
     flex-direction: column;
+    justify-content: space-between;
+    /* overflow: hidden scroll; */
     width: 320px;
-    height: 1024px;
+    /* height: 1024px; */
+    height: 100vh;
     font-family: 'TT Lakes', sans-serif;
+    font-weight: 500;
     font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
     box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.2);
 }
 
-.drawer-header {
-    display: flex;
+/* has(.drawer-checkbox:checked) body {
+    overflow: hidden;
+} */
+
+/* .drawer-header { */
+    /* display: flex; */
     /* align-items: flex-start; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* width: 320px; */
     /* height: 116px; */
+/* } */
+
+.drawer-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .drawer-wrapper-left, .drawer-wrapper-right {
@@ -60,7 +80,7 @@
     padding: 23px 24px;
 }
 
-.drawer-burger, .drawer-search {
+.drawer-burger, .drawer-search, .drawer-chat-copy, .drawer-chat, .drawer-profile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -70,22 +90,23 @@
     border: 0.5px solid rgba(0, 0, 0, 0);
 }
 
-.drawer-nav-wrapper {
-    position: relative;
-    overflow: hidden;
-    font-weight: 500;
+/* .drawer-nav-wrapper { */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.2px; */
     /* margin-top: 46.46px; */
     /* margin-left: 0; */
-}
+/* } */
 
-.drawer-nav-links {
+/* Можно ли объединять таким образом стили? list-style: none; в .drawer-address не обязателен. Или лучше писать для каждого отдельно? */
+.drawer-nav-links, .drawer-address {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    list-style: none;
+    /* overflow-y: auto; */
+    /* list-style: none; */
 }
 
 .drawer-nav-links a {
@@ -95,6 +116,12 @@
     padding: 16px 24px;
     text-decoration: none;
     color: #1B1C21;
+}
+
+.drawer-nav-links li {
+    display: flex;
+    position: relative;
+    align-items: center;
 }
 
 .drawer-nav-links li::before {
@@ -107,9 +134,82 @@
     background-color: #41F6D7;
     border-radius: 0px 4px 4px 0px;
     opacity: 0;
-    transition: 0.3s;
+    transition: all 0.2s ease-in-out;
 }
 
-.drawer-nav-links li:hover::before {
+/* Можно ли объединять таким образом наведение :hover? Для .drawer-nav-links li:hover::before нужно только opacity: 1; а для .drawer-nav-links a:hover и .drawer-lang-list a:hover - color: #7E7E82;. Или лучше писать для каждого отдельно? */
+/* .drawer-nav-links li:hover::before, a:hover, .drawer-lang-list a:hover {
     opacity: 1;
+    color: #7E7E82;
+} */
+
+/* Разделил opacity: 1; и color: #7E7E82; */
+.drawer-nav-links li:hover::before, .drawer-link-1.is-active::before {
+    opacity: 1;
+}
+
+.drawer-nav-links a:hover, .drawer-lang-list a:hover, .drawer-lang-list .is-active, .drawer-link-1.is-active a {
+    color: #7E7E82;
+}
+
+/* .drawer-link-1.is-active::before {
+    opacity: 1;
+    color: #7E7E82;
+    pointer-events: none; / Запрещаем кликать по уже активному языку /
+} */
+
+.drawer-footer-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 50px;
+    padding: 16px 24px;
+}
+
+/* .drawer-address {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+} */
+
+.drawer-address a {
+    text-decoration: none;
+    font-style: normal;
+    color: #1B1C21;
+    padding: 0px 24px 12px;
+}
+
+/* .drawer-mail-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+} */
+
+.drawer-call-link {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+}
+
+.drawer-lang-list {
+    display: inline-flex;
+    gap: 7px;
+    list-style: none;
+    margin: 40px 24px 32px;
+    /* padding: 24px 24px; */
+    /* flex-direction: row; */
+    /* text-decoration: none; */
+    /* font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px; */
+}
+
+.drawer-lang-list a {
+    text-decoration: none;
+    color: #1B1C21;
 }
