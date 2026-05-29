@@ -1,3 +1,3 @@
 # web-core-7.8
 ---
-[Мой четвёртый проект: Navigation Drawer (Slide-out Panel)](#)
+[Мой четвёртый проект: Navigation Drawer (Slide-out Panel)](https://kimgavril-prog.github.io/web-core-7.8/)
